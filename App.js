@@ -1,20 +1,21 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TodayScreen from "./screens/TodayScreen";
-import WeekScreen from "./screens/WeekScreen";
-
-const Tab = createBottomTabNavigator();
+import { View, Text, StyleSheet } from "react-native";
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Today" component={TodayScreen} />
-        <Tab.Screen name="Week" component={WeekScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>data</Text>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+
+    alignItems: `center`,
+    justifyContent: `center`,
+  },
+});
 
 export default App;
