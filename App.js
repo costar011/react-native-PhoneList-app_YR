@@ -1,10 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
+const phonelist = [
+  {
+    id: `phone1`,
+    name: ``,
+    price: ``,
+  },
+];
+
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>data</Text>
+      <View>
+        <Text>ssss</Text>
+      </View>
     </View>
   );
 };
