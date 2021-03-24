@@ -41,11 +41,23 @@ const phonelist = [
   },
 ];
 
+const Data = ({ name, price }) => {
+  return (
+    <View style={styles.data}>
+      <Text>{name}</Text>
+      <Text>{price}</Text>
+    </View>
+  );
+};
+
 const App = () => {
+  const renderData = ({ Data }) => {
+    return <Data title={Data.name} author={Data.price} />; // {}를 쓴 후 return 써야함 안그러면 화면에 안나온다.
+  };
   return (
     <View style={styles.container}>
-      <View>
-        <Text>ssss</Text>
+      <View style={styles.listBox_top}>
+        <Text>test</Text>
       </View>
     </View>
   );
@@ -57,6 +69,18 @@ const styles = StyleSheet.create({
 
     alignItems: `center`,
     justifyContent: `center`,
+  },
+
+  data: {
+    backgroundColor: `#6ce6d9`,
+    padding: 20,
+  },
+
+  listBox_top: {
+    width: `50%`,
+    height: 200,
+
+    backgroundColor: `#555`,
   },
 });
 
