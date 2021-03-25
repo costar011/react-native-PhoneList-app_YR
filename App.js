@@ -41,7 +41,7 @@ const phonelist = [
   },
 ];
 
-const Data = ({ name, price }) => {
+const Item = ({ name, price }) => {
   return (
     <View style={styles.data}>
       <Text>{name}</Text>
@@ -51,12 +51,21 @@ const Data = ({ name, price }) => {
 };
 
 const App = () => {
-  const renderData = ({ Data }) => {
-    return <Data title={Data.name} author={Data.price} />; // {}를 쓴 후 return 써야함 안그러면 화면에 안나온다.
+  const renderItem = ({ item }) => {
+    return <Item name={item.name} price={item.price} />; // {}를 쓴 후 return 써야함 안그러면 화면에 안나온다.
   };
   return (
     <View style={styles.container}>
-      <View style={styles.listBox_top}></View>
+      <View style={styles.topbox}>
+        <Text style={styles.topfont}>Phone Shopping</Text>
+      </View>
+      <View style={styles.middlebox}>
+        <Text style={styles.middlefont}>Phone List</Text>
+      </View>
+
+      <SafeAreaView style={styles.container}>
+        <FlatList data={phonelist} renderItem={renderItem} />
+      </SafeAreaView>
     </View>
   );
 };
@@ -65,20 +74,50 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
+    marginTop: StatusBar.currentHeight || 0,
+  },
+
+  data: {
+    padding: 20,
+
+    marginVertical: 10,
+
+    marginTop: 10,
+
     alignItems: `center`,
     justifyContent: `center`,
   },
 
-  data: {
-    backgroundColor: `#6ce6d9`,
-    padding: 20,
+  topbox: {
+    height: 200,
+    backgroundColor: `#ced5f5`,
+
+    alignItems: `flex-start`,
+    justifyContent: `center`,
   },
 
-  listBox_top: {
-    width: `50%`,
-    height: 200,
+  topfont: {
+    fontSize: 30,
 
-    backgroundColor: `#555`,
+    marginLeft: 100,
+    marginTop: 50,
+  },
+
+  middlebox: {
+    width: `100%`,
+    height: 100,
+
+    backgroundColor: `#6063f0`,
+
+    alignItems: `center`,
+    justifyContent: `center`,
+  },
+
+  middlefont: {
+    fontSize: 30,
+    textDecorationLine: `underline`,
+
+    color: `#fff`,
   },
 });
 
