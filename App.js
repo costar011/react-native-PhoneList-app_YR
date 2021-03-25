@@ -56,9 +56,7 @@ const App = () => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.listBox_top}>
-        <Text>test</Text>
-      </View>
+      <View style={styles.listBox_top}></View>
     </View>
   );
 };
